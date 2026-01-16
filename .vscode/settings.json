@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "car controller.slnx"
+    "dotnet.defaultSolution": "Vehicle-Physics.slnx"
 }
