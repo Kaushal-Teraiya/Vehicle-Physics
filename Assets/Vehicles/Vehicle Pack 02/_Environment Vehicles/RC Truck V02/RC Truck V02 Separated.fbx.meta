@@ -1,0 +1,95 @@
+fileFormatVersion: 2
+guid: c761c3af599d6f945b580bfa29c16679
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    4300000: RC Truck V02 Body
+    4300002: RC Truck Trailer V02
+    4300004: RC Truck Tyre V01 RR HI001
+    4300006: RC Truck Tyre V01 RR LOW001
+    4300008: RC Truck Tyre V01 RR MID001
+    4300010: RC Truck Tyre V01 RL HI001
+    4300012: RC Truck Tyre V01 RL LOW001
+    4300014: RC Truck Tyre V01 RL MID001
+    4300016: RC Truck Tyre V01 RR HI002
+    4300018: RC Truck Tyre V01 RR LOW002
+    4300020: RC Truck Tyre V01 RR MID002
+    4300022: RC Truck Tyre V01 RR HI003
+    4300024: RC Truck Tyre V01 RR LOW003
+    4300026: RC Truck Tyre V01 RR MID003
+    4300028: RC Truck Tyre V01 RL HI002
+    4300030: RC Truck Tyre V01 RL LOW002
+    4300032: RC Truck Tyre V01 RL MID002
+    4300034: RC Truck Tyre V01 RL HI003
+    4300036: RC Truck Tyre V01 RL LOW003
+    4300038: RC Truck Tyre V01 RL MID003
+    4300040: RC Truck Tyre V01 FR HI
+    4300042: RC Truck Tyre V01 FR LOW
+    4300044: RC Truck Tyre V01 FR MID
+    4300046: RC Truck Tyre V01 FL HI
+    4300048: RC Truck Tyre V01 FL MID
+    4300050: RC Truck Tyre V01 FL LOW
+    4300052: RC Truck Tyre V01 RL HI
+    4300054: RC Truck Tyre V01 RL LOW
+    4300056: RC Truck Tyre V01 RL MID
+    4300058: RC Truck Tyre V01 RR HI
+    4300060: RC Truck Tyre V01 RR LOW
+    4300062: RC Truck Tyre V01 RR MID
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

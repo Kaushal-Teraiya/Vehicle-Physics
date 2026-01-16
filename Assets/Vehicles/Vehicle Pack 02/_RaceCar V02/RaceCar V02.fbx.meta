@@ -1,0 +1,152 @@
+fileFormatVersion: 2
+guid: 55c5bc036da00d542853209fcad75d85
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: RC Tyre V02 FL HI
+    100004: RC Tyre V02 FL LOW
+    100006: RC Tyre V02 FL MID
+    100008: RC Tyre V02 FR HI
+    100010: RC Tyre V02 FR LOW
+    100012: RC Tyre V02 FR MID
+    100014: RC Tyre V02 RL HI
+    100016: RC Tyre V02 RL LOW
+    100018: RC Tyre V02 RL MID
+    100020: RC Tyre V02 RR HI
+    100022: RC Tyre V02 RR LOW
+    100024: RC Tyre V02 RR MID
+    100026: RC V02 SuspRot FL
+    100028: RC V02 SuspRot FR
+    100030: RC V02 Windshield
+    400000: //RootNode
+    400002: RC Tyre V02 FL HI
+    400004: RC Tyre V02 FL LOW
+    400006: RC Tyre V02 FL MID
+    400008: RC Tyre V02 FR HI
+    400010: RC Tyre V02 FR LOW
+    400012: RC Tyre V02 FR MID
+    400014: RC Tyre V02 RL HI
+    400016: RC Tyre V02 RL LOW
+    400018: RC Tyre V02 RL MID
+    400020: RC Tyre V02 RR HI
+    400022: RC Tyre V02 RR LOW
+    400024: RC Tyre V02 RR MID
+    400026: RC V02 SuspRot FL
+    400028: RC V02 SuspRot FR
+    400030: RC V02 Windshield
+    2300000: //RootNode
+    2300002: RC Tyre V02 FL HI
+    2300004: RC Tyre V02 FL LOW
+    2300006: RC Tyre V02 FL MID
+    2300008: RC Tyre V02 FR HI
+    2300010: RC Tyre V02 FR LOW
+    2300012: RC Tyre V02 FR MID
+    2300014: RC Tyre V02 RL HI
+    2300016: RC Tyre V02 RL LOW
+    2300018: RC Tyre V02 RL MID
+    2300020: RC Tyre V02 RR HI
+    2300022: RC Tyre V02 RR LOW
+    2300024: RC Tyre V02 RR MID
+    2300026: RC V02 SuspRot FL
+    2300028: RC V02 SuspRot FR
+    2300030: RC V02 Windshield
+    3300000: //RootNode
+    3300002: RC Tyre V02 FL HI
+    3300004: RC Tyre V02 FL LOW
+    3300006: RC Tyre V02 FL MID
+    3300008: RC Tyre V02 FR HI
+    3300010: RC Tyre V02 FR LOW
+    3300012: RC Tyre V02 FR MID
+    3300014: RC Tyre V02 RL HI
+    3300016: RC Tyre V02 RL LOW
+    3300018: RC Tyre V02 RL MID
+    3300020: RC Tyre V02 RR HI
+    3300022: RC Tyre V02 RR LOW
+    3300024: RC Tyre V02 RR MID
+    3300026: RC V02 SuspRot FL
+    3300028: RC V02 SuspRot FR
+    3300030: RC V02 Windshield
+    4300000: Plane_081
+    4300002: RaceCar V02
+    4300004: RC V01 SuspRot FL001
+    4300006: RC Tyre V02 FL HI
+    4300008: RC V01 SuspRot FR
+    4300010: RC Tyre V02 FR HI
+    4300012: RC Tyre V01 RL_HI001
+    4300014: RC Tyre V01 RL_MID001
+    4300016: RC Tyre V01 RL_LOW001
+    4300018: RC Tyre V02 RR HI
+    4300020: RC Tyre V02 RL HI
+    4300022: RC Tyre V02 FR LOW
+    4300024: RC Tyre V02 FR MID
+    4300026: RC Tyre V02 FL MID
+    4300028: RC Tyre V02 FL LOW
+    4300030: RC V02 SuspRot FL
+    4300032: RC V02 SuspRot FR
+    4300034: RC Tyre V02 RR MID
+    4300036: RC Tyre V02 RR LOW
+    4300038: RC Tyre V02 RL MID
+    4300040: RC Tyre V02 RL LOW
+    4300042: RaceCar V02 Body
+    4300044: RC V02 Windshield
+    4300046: RaceCar SteerWheel V02
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 75
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

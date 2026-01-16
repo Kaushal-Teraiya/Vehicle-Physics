@@ -1,0 +1,122 @@
+fileFormatVersion: 2
+guid: 6243440bff047aa449db0a4350519f1d
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    4300000: RC_Ambulance_Car_V01
+    4300002: RC_Truck_Tyre_V01_FR_001
+    4300004: RC Ambulance Car Tyre RL LOW
+    4300006: RC Ambulance Car Tyre RR LOW
+    4300008: RC Ambulance Car Tyre FL LOW
+    4300010: RC Ambulance Car Tyre FR LOW
+    4300012: RC Ambulance Car V01
+    4300014: RC_Steering_Wheel_V01
+    4300016: RaceCar V01 Body1
+    4300018: RaceCar V01 Windshield
+    4300020: RC V01 SuspRot FR
+    4300022: RC Tyre V01 FR_HI
+    4300024: RC Tyre V01 FR_MID
+    4300026: RC Tyre V01 FR_LOW
+    4300028: RC V01 SuspRot FL
+    4300030: RC Tyre V01 FL_HI
+    4300032: RC Tyre V01 FL_MID
+    4300034: RC Tyre V01 FL_LOW
+    4300036: RC Tyre V01 Rear_HI
+    4300038: RC Tyre V01 Rear_MID
+    4300040: RC Tyre V01 Rear_LOW
+    4300042: RaceCar V01 Pit Version
+    4300044: Plane01
+    4300046: RaceCar V01 Front Wing
+    4300048: RC_Truck_V01_Body
+    4300050: RC_Truck_Tyre_V01_Rear
+    4300052: RC_Truck_Tyre_V01_FR
+    4300054: RC_Truck_Tyre_V01_FL
+    4300056: RC_Truck_Tyre_V01_Rear_01
+    4300058: RC_Truck_Tyre_V01_Rear_03
+    4300060: RC_Truck_Tyre_V01_Rear_02
+    4300062: RaceCar V01 Body
+    4300064: RC V01 SuspRot FL
+    4300066: RC Tyre V01 FL_HI
+    4300068: RC Tyre V01 FL_MID
+    4300070: RC Tyre V01 FL_LOW
+    4300072: RaceCar V01 Windshield
+    4300074: RC V01 SuspRot FR
+    4300076: RC Tyre V01 FR_HI
+    4300078: RC Tyre V01 FR_MID
+    4300080: RC Tyre V01 FR_LOW
+    4300082: RC Tyre V01 RR_HI
+    4300084: RC Tyre V01 RR_MID
+    4300086: RC Tyre V01 RR_LOW
+    4300088: RC Tyre V01 RL_HI
+    4300090: RC Tyre V01 RL_MID
+    4300092: RC Tyre V01 RL_LOW
+    4300094: ambulance_008
+    4300096: ambulance_007
+    4300098: ambulance_006
+    4300100: RC Police Minibus V01
+    4300102: RC Police Minibus V01 Tyre RR LOW001
+    4300104: RC Police Minibus V01 Tyre FR LOW001
+    4300106: RC Police Minibus V01 Tyre FL LOW001
+    4300108: RC Police Minibus V01 Tyre RL LOW001
+    4300110: RC Police Minibus V01 Tyre RR LOW
+    4300112: RC Police Minibus V01 Tyre FR LOW
+    4300114: RC Police Minibus V01 Tyre FL LOW
+    4300116: RC Police Minibus V01 Tyre RL LOW
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

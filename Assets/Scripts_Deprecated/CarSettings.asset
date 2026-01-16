@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cba4a66fb936dd54a8687334a3e037bd, type: 3}
+  m_Name: CarSettings
+  m_EditorClassIdentifier: Assembly-CSharp::CarSettings
+  acceleration: 20
+  maxSpeed: 50
+  deceleration: 30
+  decelerationToRest: 2
+  turnSpeed: 100
+  suspensionRestLength: 0.4
+  suspensionRange: 0.3
+  suspensionStrength: 1
+  suspensionDamping: 6
+  compressionMultiplier: 0.1
+  YoriginOffset: 0
+  wheelRadius: 0.2
+  collisionRayLength: 1
+  maxSteerAngle: 30
+  baseShakeIntensity: 0.0001
+  speedShakeMultiplier: 0.0005
+  bumpShakeIntensity: 0.002
+  shakeDamping: 5
+  wheelRotationMultiplier: 360

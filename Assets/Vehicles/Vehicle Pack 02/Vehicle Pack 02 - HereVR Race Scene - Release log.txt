@@ -1,0 +1,16 @@
+Release log
+
+1.01 
+
+- Original version
+
+1.02 
+
+- Added truck with rotatable trailer
+- Added new tyres for the trucks (with LOD)
+- Update of related textures
+- New 'single mesh' truck version to generate less drawcalls as 'environment vehicle' with no need of manual optimizing
+
+1.03
+
+- Unity 5 version
