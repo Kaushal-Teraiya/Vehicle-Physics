@@ -18,8 +18,8 @@ public class CarBodyPhysics
         velocity = Vector3.zero;
         angularVelocity = Vector3.zero;
 
-        inertia = new Vector3(300f, 1200f, 500f); // how hard the object is to rotate in x , y , z axes
-        inverseInertia = new Vector3(1f / inertia.x, 1f / inertia.y, 1f / inertia.z); // for ease   torque formula is τ = Iα and α = τ / I   angular acceleration
+        inertia = new Vector3(5500f, 1200f, 500f); // how hard the object is to rotate in x , y , z axes
+        inverseInertia = new Vector3(1f / inertia.x, 1f / inertia.y, 1f / inertia.z); // for ease   torque formula is τ = Iα and α = τ / I   angular acceleration  pre calculaltion of 1/I so that it can be used in calculating angular acceleration on line 42
     }
 
     // Integrate linear motion
@@ -79,7 +79,7 @@ public class CarBodyPhysics
     public void ApplyAngularFriction(Vector3 angularFriction)
     {
         angularVelocity = new Vector3(
-            angularVelocity.x * (1f - angularFriction.x), // 1 - angularFriction is the damper like factor that reduces velocity this done every frame
+            angularVelocity.x * (1f - angularFriction.x),// 1 - angularFriction is the damper like factor that reduces velocity this done every frame
             angularVelocity.y * (1f - angularFriction.y),
             angularVelocity.z * (1f - angularFriction.z)
         );
@@ -92,12 +92,13 @@ public class CarBodyPhysics
 
     public Vector3 GetVelocity() => velocity;
 
+    public void SetVelocity(Vector3 newVelocity) => velocity = newVelocity;
+
     public void AddImpulse(Vector3 impulse) => velocity += impulse / mass;
 
     public void ResetVelocity() => velocity = Vector3.zero;
 
-    public void GetAngularVelocity(Vector3 impulse) => velocity += impulse / mass;
-
+    public Vector3 GetAngularVelocity() => angularVelocity;
     public void Reset()
     {
         velocity = Vector3.zero;

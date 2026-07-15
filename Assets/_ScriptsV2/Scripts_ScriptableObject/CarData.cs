@@ -11,4 +11,7 @@ public class CarData : ScriptableObject
     [Header("Wheels")]
     public WheelData[] ScriptableObjectOf_WheelData;
     public int Xwheeler = 4;
+    public int carRadius;
+    public int carHeight;
+    // reduced from implicit 1.0
 }

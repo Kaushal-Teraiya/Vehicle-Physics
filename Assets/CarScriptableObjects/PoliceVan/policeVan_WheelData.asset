@@ -16,3 +16,5 @@ MonoBehaviour:
   RasiusOf_Wheel: 0.4
   MassOf_Wheel: 30
   DataOf_Suspension: {fileID: 11400000, guid: 8917477b9de5f8447af8580a1a8b6cb4, type: 2}
+  frictionCoefficient: 0.8
+  wheelCorrectionFactor: 0.01

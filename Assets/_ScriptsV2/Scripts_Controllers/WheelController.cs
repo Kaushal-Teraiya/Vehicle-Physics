@@ -97,6 +97,40 @@ public class WheelController : MonoBehaviour
         UpdateWheelPosition(carBodyTransform, dt_fixedDeltaTime);
     }
 
+    // public void SimulateWheel(float dt_fixedDeltaTime, Transform carBodyTransform)
+    // {
+    //     RaycastHit hitInfo;
+    //     Vector3 rayOrigin = transform.position;
+    //     Vector3 rayDir = -transform.up;
+    //     float rayLength = suspension_RestLength + suspension_maxExtension + wheelRadius + 0.01f;
+
+    //     Wheel_isOnGround = Physics.Raycast(rayOrigin, rayDir, out hitInfo, rayLength);
+
+    //     if (Wheel_isOnGround)
+    //     {
+    //         contactPointOf_WheelOnGround = hitInfo.point;
+    //         float suspensionLength = hitInfo.distance - wheelRadius - correction_Factor;
+    //         float rawCompression = suspension_RestLength - suspensionLength;
+
+    //         currentCompression = Mathf.Clamp(rawCompression, -suspension_maxExtension, suspension_maxCompression);
+
+    //         float springForce = spring_Stiffness * currentCompression;
+    //         float WheelDisplacement = rawCompression - lastCompression; // unclamped delta — fixed earlier in thread
+    //         float suspensionVelocity = WheelDisplacement / dt_fixedDeltaTime;
+    //         float damperForce = damperCoefficient * suspensionVelocity;
+
+    //         wheelForce = wheelTransform.up * (springForce + damperForce);
+    //         lastCompression = rawCompression;
+    //     }
+    //     else
+    //     {
+    //         currentCompression = -suspension_maxExtension;
+    //         wheelForce = Vector3.zero;
+    //     }
+
+    //     UpdateWheelPosition(carBodyTransform, dt_fixedDeltaTime);
+    // }
+
     private void UpdateWheelPosition(Transform carBodyTransform, float dt)
     {
         float effectiveLength = suspension_RestLength - currentCompression;
@@ -142,6 +176,7 @@ public class WheelController : MonoBehaviour
     public float GetRestLength() => suspension_RestLength;
 
     public float GetCurrentCompression() => Mathf.Max(0f, currentCompression);
+    public float GetWheelRadius() => wheelRadius;
 
     public float GetFrictionCoefficient()
     {

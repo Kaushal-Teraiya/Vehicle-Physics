@@ -17,6 +17,9 @@ public class CarControllerV2 : MonoBehaviour
     private const float gravity = -9.81f;
     public VehicleCollider vehicleCollider;
     public StaticBoxCollider groundCollider;
+    //[SerializeField] private float minHeightAboveGround = 0.5f; // adjust based on your chassis height
+    private CarBodyCollider bodyCollider;
+
 
     void Start()
     {
@@ -40,7 +43,7 @@ public class CarControllerV2 : MonoBehaviour
 
         float totalMass = carData.carBody_Mass + totalWheelMass;
         carBodyPhysics = new CarBodyPhysics(totalMass);
-
+        bodyCollider = new CarBodyCollider(Vector3.zero, carData.carRadius, carData.carHeight);
         // optional: small upward impulse at spawn
         carBodyPhysics.AddImpulse(Vector3.up * 0.5f * totalMass);
     }
@@ -100,34 +103,51 @@ public class CarControllerV2 : MonoBehaviour
         carBodyTransform.rotation = newRotation;
 
         // ===================== COLLISION WITH GROUND BOX ===================== //
-        if (groundCollider != null && vehicleCollider != null)
-        {
-            if (
-                CollisionMath.OBBvsOBB(
-                    vehicleCollider.OBB,
-                    groundCollider.OBB,
-                    out Vector3 normal,
-                    out float penetration
-                )
-            )
-            {
-                // Move car out of ground
-                Vector3 correction = normal * penetration;
-                carBodyTransform.position += correction;
 
-                // Stop downward velocity
-                Vector3 vel = carBodyPhysics.GetVelocity();
-                float into = Vector3.Dot(vel, -normal);
 
-                if (into > 0)
-                {
-                    vel += normal * into;
-                    carBodyPhysics.ResetVelocity();
-                    carBodyPhysics.AddImpulse(vel * carBodyPhysicsMass());
-                }
-            }
-        }
     }
+    // void CheckBodyCollisions()
+    // {
+    //     bodyCollider.GetCapsulePoints(carBodyTransform, out Vector3 p1, out Vector3 p2);
+
+    //     // Raycast sphere along capsule axis
+    //     RaycastHit[] hits = Physics.SphereCastAll(
+    //         p1,
+    //         bodyCollider.radius,
+    //         (p2 - p1).normalized,
+    //         Vector3.Distance(p2, p1),
+    //         layerMask: ~LayerMask.GetMask("Vehicle")  // ignore vehicle layer
+    //     );
+
+    //     foreach (var hit in hits)
+    //     {
+    //         HandleCollision(hit);
+    //     }
+    // }
+    // void HandleCollision(RaycastHit hit)
+    // {
+    //     Vector3 normal = hit.normal;
+    //     float penetration = bodyCollider.radius - Vector3.Distance(carBodyTransform.position, hit.point);
+
+    //     if (penetration > 0.001f)
+    //     {
+    //         // Separate
+    //         carBodyTransform.position += normal * (penetration + 0.001f);
+
+    //         // Decompose velocity
+    //         Vector3 vel = carBodyPhysics.GetVelocity();
+
+    //         Vector3 tangentialVel = Vector3.ProjectOnPlane(vel, normal);  // slide along surface
+    //         Vector3 normalVel = vel - tangentialVel;  // perpendicular component
+
+    //         // Apply restitution only to normal component
+    //         float restitution = 0.3f;
+    //         Vector3 correctedVel = tangentialVel - normalVel * restitution;
+
+    //         carBodyPhysics.ResetVelocity();
+    //         carBodyPhysics.AddImpulse(correctedVel * carData.carBody_Mass);
+    //     }
+    // }
 
     private float carBodyPhysicsMass() => carData.carBody_Mass;
 }

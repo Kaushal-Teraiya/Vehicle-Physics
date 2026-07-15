@@ -15,5 +15,5 @@ MonoBehaviour:
   restLength: 0.1
   maxCompression: 0.5
   maxExtension: 0.1
-  springStiffness: 35000
+  springStiffness: 50000
   dampingCoefficient: 1000

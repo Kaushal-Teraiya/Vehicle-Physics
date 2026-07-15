@@ -20,3 +20,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: c0ea811a205d8c14c8d30479e30cbc1b, type: 2}
   - {fileID: 11400000, guid: c0ea811a205d8c14c8d30479e30cbc1b, type: 2}
   Xwheeler: 4
+  carRadius: 1
+  carHeight: 2

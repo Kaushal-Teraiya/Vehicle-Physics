@@ -10,4 +10,5 @@ public class WheelData : ScriptableObject
 
     [Range(0f, 1f)]
     public float frictionCoefficient = 0.8f;
+    public float wheelCorrectionFactor = 0.1f;
 }
