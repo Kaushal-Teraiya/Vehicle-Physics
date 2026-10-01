@@ -8,10 +8,16 @@ public class CarData : ScriptableObject
     public float carBody_Mass;
     public Vector3 Car_centerOfMass;
 
+
     [Header("Wheels")]
     public WheelData[] ScriptableObjectOf_WheelData;
     public int Xwheeler = 4;
     public int carRadius;
     public int carHeight;
     // reduced from implicit 1.0
+
+
+    [Header("Car drive")]
+    public float engineTorque = 400f;
+    public float maxSteeringAngle = 35f;
 }

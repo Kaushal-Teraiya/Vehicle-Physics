@@ -11,6 +11,7 @@ public class CarBodyPhysics
     private Vector3 inertia;
     private Vector3 inverseInertia;
     private const float angularDamping = 0.995f;
+    public float GetMass() => mass;
 
     public CarBodyPhysics(float mass)
     {
@@ -23,11 +24,12 @@ public class CarBodyPhysics
     }
 
     // Integrate linear motion
+
     public Vector3 IntegrateLinear(float dt, Vector3 totalForce)
     {
         Vector3 acceleration = totalForce / mass;
         velocity += acceleration * dt;
-        velocity *= velocityDamping;
+        //velocity *= velocityDamping;
         return velocity * dt;
     }
 

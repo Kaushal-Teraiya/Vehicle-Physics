@@ -17,8 +17,9 @@ MonoBehaviour:
   ScriptableObjectOf_WheelData:
   - {fileID: 11400000, guid: c0ea811a205d8c14c8d30479e30cbc1b, type: 2}
   - {fileID: 11400000, guid: c0ea811a205d8c14c8d30479e30cbc1b, type: 2}
-  - {fileID: 11400000, guid: c0ea811a205d8c14c8d30479e30cbc1b, type: 2}
-  - {fileID: 11400000, guid: c0ea811a205d8c14c8d30479e30cbc1b, type: 2}
+  - {fileID: 11400000, guid: 6e457a20b8a1a5a4da3060cf0894ce06, type: 2}
+  - {fileID: 11400000, guid: 6e457a20b8a1a5a4da3060cf0894ce06, type: 2}
   Xwheeler: 4
   carRadius: 1
   carHeight: 2
+  engineTorque: 400

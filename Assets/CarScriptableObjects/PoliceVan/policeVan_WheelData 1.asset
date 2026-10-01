@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c893cd5c388fb1944af423a4ad01e749, type: 3}
-  m_Name: policeVan_WheelData
+  m_Name: policeVan_WheelData 1
   m_EditorClassIdentifier: Assembly-CSharp::WheelData
   NameOf_Wheel: wheel
   RasiusOf_Wheel: 0.4
@@ -95,8 +95,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   wheelCorrectionFactor: 0.01
-  isDriven: 0
-  canSteer: 1
+  isDriven: 1
+  canSteer: 0
   LongiPacejkaB: 10
   LongiPacejkaC: 1.9
   LongiPacejkaE: 0.97
