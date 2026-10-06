@@ -17,7 +17,8 @@ public class CarControllerV2 : MonoBehaviour
     public CarBodyPhysics carBodyPhysics { get; private set; }
     private const float gravity = -9.81f;
     public CarBodyPhysics Physics => carBodyPhysics;
-
+    [SerializeField] private float centerOfMassHeight = 0.5f;
+    [SerializeField] private Vector3 centerOfMassOffset = new Vector3(0f, 0.35f, 0f);
     private void OnEnable()
     {
         driveAction.action.Enable();
@@ -64,6 +65,7 @@ public class CarControllerV2 : MonoBehaviour
         float throttle = driveInput.y;
         float steeringInput = driveInput.x;
         float dt = Time.fixedDeltaTime;
+        Vector3 comWorldPos = carBodyTransform.position + carBodyTransform.TransformDirection(centerOfMassOffset);
         //Debug.Log($"Throttle: {throttle}  Steering: {steering}");
         Vector3 totalForce = Vector3.zero;
         Vector3 totalTorque = Vector3.zero;
@@ -86,23 +88,44 @@ public class CarControllerV2 : MonoBehaviour
                 wheel.SteeringAngle(0f);
             }
 
-            float driveTorque = throttle * 300f;
+            float driveTorque = throttle * 1000f;
             wheel.SetDriveTorque(driveTorque);
 
-            wheel.SimulateWheel(dt, carBodyTransform, chassisVelocity, chassisAngularVelocity);
+            wheel.SimulateWheel(dt, carBodyTransform, chassisVelocity, chassisAngularVelocity, comWorldPos);
 
             totalForce += wheel.wheelForce;
-
-            Vector3 r = wheel.contactPointOf_WheelOnGround - carBodyTransform.position;
-
             // Suspension torque
-            totalTorque += Vector3.Cross(r, wheel.wheelForce);
+
+
+            Vector3 r = wheel.contactPointOf_WheelOnGround - comWorldPos;
+            Vector3 localR = carBodyTransform.InverseTransformDirection(r);
+
+            Debug.Log(
+                $"Wheel R Local: X:{localR.x:F2} Y:{localR.y:F2} Z:{localR.z:F2}"
+            );
+
+            Vector3 wheelTorque = Vector3.Cross(r, wheel.wheelForce);
+
+            totalTorque += wheelTorque;
 
         }
 
+        Vector3 rollAxis = carBodyTransform.forward;
 
+        float rollAngularVelocity = Vector3.Dot(chassisAngularVelocity, rollAxis);
+
+        float rollDampingTorque = -rollAngularVelocity * 5000f;
+
+        totalTorque += rollAxis * rollDampingTorque;
         Vector3 localTorque = carBodyTransform.InverseTransformDirection(totalTorque);
-
+        Debug.Log(
+          $"ROLL TORQUE: {localTorque.z:F0} | " +
+          $"ANGULAR Z: {chassisAngularVelocity.z:F3} | " +
+          $"FL Fy: {wheelControllers_Scripts[0].LateralForce.magnitude:F0} | " +
+          $"FR Fy: {wheelControllers_Scripts[1].LateralForce.magnitude:F0} | " +
+          $"RL Fy: {wheelControllers_Scripts[2].LateralForce.magnitude:F0} | " +
+          $"RR Fy: {wheelControllers_Scripts[3].LateralForce.magnitude:F0}"
+      );
         Debug.Log(
             $"TOTAL TORQUE | Local X:{localTorque.x:F0} " +
             $"Y:{localTorque.y:F0} " +
@@ -121,6 +144,7 @@ public class CarControllerV2 : MonoBehaviour
         // }
 
         //========== linear Motion===========//
+        //Vector3 comWorldPos = carBodyTransform.position + carBodyTransform.TransformDirection(centerOfMassOffset)
         totalForce += -carBodyPhysics.GetVelocity() * 0.8f;
         Vector3 displacement = carBodyPhysics.IntegrateLinear(dt, totalForce);
         carBodyTransform.position += displacement;
@@ -132,10 +156,9 @@ public class CarControllerV2 : MonoBehaviour
             totalTorque
         );
         carBodyTransform.rotation = newRotation;
-
         // ===================== COLLISION WITH GROUND BOX ===================== //
 
-        EnforceWheelConstraints();
+        //EnforceWheelConstraints();
     }
 
     void EnforceWheelConstraints()
@@ -161,4 +184,16 @@ public class CarControllerV2 : MonoBehaviour
     }
 
     private float carBodyPhysicsMass() => carData.carBody_Mass;
+
+    private void OnDrawGizmos()
+    {
+        if (carBodyTransform == null) return;
+
+        Vector3 comWorldPos =
+            carBodyTransform.position +
+            carBodyTransform.TransformDirection(centerOfMassOffset);
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(comWorldPos, 0.08f);
+    }
 }

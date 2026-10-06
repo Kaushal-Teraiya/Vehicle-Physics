@@ -10,7 +10,7 @@ public class CarBodyPhysics
     private Vector3 angularVelocity;
     private Vector3 inertia;
     private Vector3 inverseInertia;
-    private const float angularDamping = 0.995f;
+    private const float angularDamping = 0.90f;
     public float GetMass() => mass;
 
     public CarBodyPhysics(float mass)
@@ -19,7 +19,7 @@ public class CarBodyPhysics
         velocity = Vector3.zero;
         angularVelocity = Vector3.zero;
 
-        inertia = new Vector3(5500f, 1200f, 500f); // how hard the object is to rotate in x , y , z axes
+        inertia = new Vector3(5500f, 1200f, 1000f); // how hard the object is to rotate in x , y , z axes
         inverseInertia = new Vector3(1f / inertia.x, 1f / inertia.y, 1f / inertia.z); // for ease   torque formula is τ = Iα and α = τ / I   angular acceleration  pre calculaltion of 1/I so that it can be used in calculating angular acceleration on line 42
     }
 

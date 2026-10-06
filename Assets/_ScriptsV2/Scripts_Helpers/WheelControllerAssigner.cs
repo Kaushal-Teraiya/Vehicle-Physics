@@ -18,7 +18,7 @@ public class WheelControllerAssigner : MonoBehaviour
         List<WheelController> wheelControllersList_Cache = new List<WheelController>();
         foreach (var t in GetComponentsInChildren<Transform>(true))
         {
-            if (t.name.ToLower().Contains("wheel"))
+            if (t.name.ToLower().Contains("wheel") ||t.name.ToLower().Contains("sphere"))
             {
                 WheelController wheelController = t.GetComponent<WheelController>();
                 if (wheelController == null)

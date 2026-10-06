@@ -33,6 +33,7 @@ public class WheelController : MonoBehaviour
     public bool ShowRayCastGizmos;
     private RaycastHit hitInfo;
     private Vector3 lateralForce; //Along wheel right
+    public Vector3 LateralForce => lateralForce;
 
     public Vector3 wheelForce { get; private set; }
     private WheelPhysics wheelPhysics;
@@ -42,6 +43,8 @@ public class WheelController : MonoBehaviour
     private Vector3 LongitudinalForce; //Along wheel forward 
     private float slipAngleDebug;
     public float steeringAngle { get; private set; }
+    private float lastCompression;
+    private float staticCompression;
 
     private void Awake()
     {
@@ -70,16 +73,17 @@ public class WheelController : MonoBehaviour
         suspension_maxCompression = Suspension.maxCompression;
         suspension_maxExtension = Suspension.maxExtension;
 
+
         // start with wheels fully drooped
         currentCompression = -suspension_maxExtension;
-        //lastCompression = currentCompression;
+        lastCompression = currentCompression;
     }
 
     public void SteeringAngle(float angle)
     {
         steeringAngle = angle;
     }
-    public void SimulateWheel(float dt_fixedDeltaTime, Transform carBodyTransform, Vector3 chassisVelocity, Vector3 chassisAngularVelocity)
+    public void SimulateWheel(float dt_fixedDeltaTime, Transform carBodyTransform, Vector3 chassisVelocity, Vector3 chassisAngularVelocity , Vector3 CenterOfMassWorldPos)
     {
         RaycastHit hitInfo;
         hitInfo = default;
@@ -149,10 +153,10 @@ public class WheelController : MonoBehaviour
 
             //=========Suspension forces=============//
             float springForce = spring_Stiffness * currentCompression;
-            Vector3 r = transform.position - carBodyTransform.position;
+            Vector3 r = transform.position - CenterOfMassWorldPos;
             Vector3 wheelPivotVelocity = chassisVelocity + Vector3.Cross(chassisAngularVelocity, r);
 
-            float suspensionVelocity = -Vector3.Dot(wheelPivotVelocity, transform.up);
+            float suspensionVelocity = -Vector3.Dot(wheelPivotVelocity, hitInfo.normal);
             float damperForce = damperCoefficient * suspensionVelocity;
             suspensionForce = hitInfo.normal * (springForce + damperForce);
 
@@ -214,7 +218,11 @@ public class WheelController : MonoBehaviour
             float steeringEffect = Mathf.InverseLerp(0.5f, 2f, carSpeed);
             lateralPacejkaForce *= steeringEffect;
             lateralForce = -wheelRight * lateralPacejkaForce;
-
+            Debug.Log(
+                $"LATERAL | {name} | " +
+                $"Slip:{Mathf.Rad2Deg * slipAngle:F2}° | " +
+                $"Fy:{lateralForce.magnitude:F0} N"
+            );
             //========stationary lateral grip===========//
 
 
@@ -278,6 +286,7 @@ public class WheelController : MonoBehaviour
         {
             currentCompression = -suspension_maxExtension;
             wheelForce = Vector3.zero;
+            
         }
 
         //The above if else block was just for determining the compression amount , the application of this value is in the below function
